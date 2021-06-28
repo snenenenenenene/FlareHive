@@ -14,26 +14,21 @@ export default function App() {
   return (
     <div>
       <Router>
+      <div className="App">
       <Switch>
-          <Route path="/login">
-            <Login />
+          <Route path="/login" component={Login}>
           </Route>
-          <Route path="/chat">
-            <Chat />
+          <Route path="/chat/:recipient" component={Chat}>
           </Route>
-          <Route exact path="/">
-            <Dashboard />
+          <Route exact path="/" component={Dashboard}>
           </Route>
-          
         </Switch>
+        </div>
       </Router>
       <div className="top-decoration">
         <div className="red-decoration"></div>
         <div className="orange-decoration"></div>
         <div className="yellow-decoration"></div>
-      </div>
-      <div className="App">
-        
       </div>
     </div>
   );
