@@ -12,7 +12,6 @@
 html,
 body {
   height: calc(100vh - 20px);
-  max-height: 100vh;
   background-color: var(--primary-2);
   color: var(--text-color);
   width: 100%;
@@ -40,12 +39,11 @@ body {
 }
 
 .sidebar {
-  /* display: inline-block; */
   width: 320px;
-  /* padding: 40px 20px; */
-  /* margin-top: 19px; */
   background-image: linear-gradient(#f8eaa190, #f76c6c70);
   height: 100%;
+  max-width: 15%;
+  width: 15%;
   padding: 0 20px;
   z-index: 100;
 }
@@ -85,6 +83,7 @@ body {
 .chats {
   border-radius: 15px;
   padding: 5%;
+  margin-top: 4%;
   height: 70%;
   background-color: var(--primary);
 }
@@ -121,15 +120,13 @@ body {
 
 .recipient-name-container {
   width: 100%;
-  background-color: var(--primary);
-  margin-bottom: 10px;
+  background-color: var(--primary-2);
 }
 
-.chat-route {
+.container {
   display: flex;
   margin-top: 20px;
   align-items: center;
-  /* height: 89.85vh; */
   height: calc(100vh - 20px);
 }
 
@@ -137,19 +134,19 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--primary-1);
-  height: 90%;
-  padding: 0 30px;
+  height: 100%;
   width: 100%;
 }
 .input-container {
   display: flex;
-  width: 98%;
+  width: 90%;
   padding: 20px;
   align-items: center;
 }
 .chat-input {
   background-color: var(--primary);
   width: 100%;
+  max-width: 100%;
   color: white;
   border-style: none;
   padding: 20px;
@@ -161,6 +158,11 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 25px;
   overflow: hidden;
+  word-break: break-all;
+}
+.chat-input:empty:before {
+  content: "Enter Text...";
+  color: rgb(102, 102, 102);
 }
 .chat-input:focus {
   outline: none;
@@ -183,6 +185,7 @@ body {
   background-color: var(--secondary);
   color: var(--tertiary);
   transform: rotate(270deg);
+  transition: all 0.3s;
 }
 
 .chat-area {
