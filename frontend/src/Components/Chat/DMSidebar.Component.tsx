@@ -4,6 +4,12 @@ import SettingsRoundedIcon from '@material-ui/icons/SettingsRounded';
 
 const DMSidebar =(props : any) => {
   const history = useHistory();
+
+  const logout = () => {
+    localStorage.removeItem('user');
+    history.push(`/login`)
+  }
+
     const handleChatClick = (e : any) => {
         e.preventDefault();
         history.push({
@@ -41,6 +47,7 @@ const DMSidebar =(props : any) => {
               <AccountCircleRoundedIcon style={{fontSize: 50}} className="user-icon" onClick={(e) => {handleSettingsClick(e, "user")}}/>
               <p style={{fontWeight: 1000, fontSize: 25}}>User1</p>
               </div>
+              <button onClick={() => logout()}>LOGOUT</button>
             </div>
           </div>
     )

@@ -150,6 +150,16 @@ body {
   border-style: groove;
   border-color: var(--tertiary);
 }
+
+.login-form a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.login-redirect {
+  font-size: 20px;
+}
+
 .login-input {
   font-family: "Roboto", sans-serif;
   color: #333;

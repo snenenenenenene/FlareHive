@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useHistory } from "react-router";
 import { Link } from 'react-router-dom';
 
-export default function Login() {
+export default function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
@@ -22,7 +22,7 @@ export default function Login() {
       history.push(`/home`);
       return '';
     }
-    axios.post(`${process.env.REACT_APP_API_URL}/login`, 
+    axios.post(`${process.env.REACT_APP_API_URL}/register`, 
     {
       email: email,
       password: password
@@ -51,12 +51,12 @@ export default function Login() {
         <input className="login-input" onChange={e => setPassword(e.target.value)} placeholder="PASSWORD" ></input>
         </div>
         <div>
-        <button className="login-button" type="submit" onClick={e => login(e)}>LOGIN</button>
+        <button className="login-button" type="submit" onClick={e => login(e)}>REGISTER</button>
         </div>
         <div className="login-redirect">
-          Go to  
-        <Link to="/register"> Register</Link>
-        </div>
+          Go to 
+      <Link to="/login"> Login</Link>
+      </div>
       </form>
       </div>
     </div>
