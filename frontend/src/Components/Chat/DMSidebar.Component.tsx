@@ -11,6 +11,7 @@ const DMSidebar =(props : any) => {
       
     return (
         <div className="chats">
+          <div className="chat" id="Dashboard" onClick={(e) => {history.push(`/`)}}>Dashboard</div>
             <div className="direct-messages-text">DIRECT MESSAGES: </div>
               <div className="chat" id="Jonas" onClick={(e) => {handleChatClick(e)}}>Jonas</div>
               <div className="chat" id="Senne" onClick={(e) => {handleChatClick(e)}}>Senne</div>

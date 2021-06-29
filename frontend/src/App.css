@@ -11,6 +11,7 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
 .App {
   background-color: var(--primary-2);
@@ -59,12 +60,14 @@ body {
   cursor: pointer;
   padding: 10px 0 10px 10px;
   border-radius: 5px;
+  margin: 10px -5px;
 }
 
 .chat:hover {
   background-color: var(--primary-3);
   color: var(--primary);
   font-weight: bolder;
+  transition: all 0.3s;
 }
 
 .direct-messages-text {
@@ -73,18 +76,37 @@ body {
   margin-bottom: 10px;
 }
 
+.recipient-name {
+  margin: 10px 55%;
+  font-size: 40px;
+  font-weight: bolder;
+  color: var(--primary);
+}
+
+.recipient-name-container {
+  margin-right: -100px;
+  background-image: linear-gradient(
+    to top right,
+    var(--secondary),
+    var(--tertiary)
+  );
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px var(--primary);
+}
+
 .chat-container {
   justify-content: center;
   position: relative;
   background-color: var(--primary-1);
   height: 85%;
-  width: 100%;
+  margin-left: 300px;
 }
 .input-container {
   position: fixed;
   bottom: 20px;
   left: 25%;
-  width: 50%;
+  width: 53%;
+  margin-left: 150px;
 }
 .chat-input {
   background-color: var(--primary);
@@ -126,5 +148,7 @@ body {
 .chat-area {
   background-color: var(--primary);
   height: 75vh;
-  width: 100%;
+  width: 120vh;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 1px var(--tertiary);
 }
