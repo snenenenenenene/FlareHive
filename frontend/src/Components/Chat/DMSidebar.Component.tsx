@@ -8,6 +8,7 @@ const DMSidebar =(props : any) => {
   const logout = () => {
     localStorage.removeItem('user');
     history.push(`/login`)
+    window.location.reload();
   }
 
     const handleChatClick = (e : any) => {
@@ -16,7 +17,6 @@ const DMSidebar =(props : any) => {
           pathname: `/chat/${e.target.id}`
        });
       }
-
       const handleSettingsClick = (e : any, route : string) => {
         history.push(`/${route}`);
       } 

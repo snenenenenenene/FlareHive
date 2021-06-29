@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 export default function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [authenticated, setAuthenticated] = useState(false);
   const history = useHistory();
 
   const login = (e : any) => {

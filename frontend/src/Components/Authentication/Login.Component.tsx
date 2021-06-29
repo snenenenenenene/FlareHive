@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [authenticated, setAuthenticated] = useState(false);
   const history = useHistory();
 
   const login = (e : any) => {
@@ -20,6 +19,7 @@ export default function Login() {
       }
       localStorage.setItem('user', JSON.stringify(user));
       history.push(`/home`);
+      window.location.reload();
       return '';
     }
     axios.post(`${process.env.REACT_APP_API_URL}/login`, 
