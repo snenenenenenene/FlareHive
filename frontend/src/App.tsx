@@ -9,6 +9,7 @@ import './App.css';
 import Login from "./Components/Authentication/Login.Component";
 import Chat from "./Components/Chat/Chat.Component";
 import Dashboard from "./Components/Dashboard/Dashboard.Component";
+import Settings from "./Components/Settings/Settings.Component";
 
 export default function App() {
   return (
@@ -20,8 +21,11 @@ export default function App() {
           </Route>
           <Route path="/chat/:recipient" component={Chat}>
           </Route>
+          <Route exact path="/settings" component={Settings}>
+          </Route>
           <Route exact path="/" component={Dashboard}>
           </Route>
+          
         </Switch>
         </div>
       </Router>

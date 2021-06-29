@@ -1,10 +1,10 @@
 import DMSidebar from "./DMSidebar.Component";
+import SendRoundedIcon from '@material-ui/icons/SendRounded';
 
 const Chat = ({match} : any, props : any) => {
 
     const sendMessage = (e : any) => {
         e.preventDefault();
-        console.log(e)
     }
 
 
@@ -20,7 +20,8 @@ const Chat = ({match} : any, props : any) => {
         </div>
         <div className="input-container">
         <textarea className="chat-input" placeholder="Type Something..." ></textarea>
-        <button onClick={(e) => sendMessage(e)} className="chat-button" type="submit" >
+        <button onClick={(e) => sendMessage(e)} className="chat-button" type="submit">
+        <SendRoundedIcon style={{fontSize: 40}} />
         </button>
         </div>
         </div>
