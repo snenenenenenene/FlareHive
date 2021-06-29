@@ -9,13 +9,13 @@ const Chat = ({match} : any, props : any) => {
 
 
     return (
-      <div>
+      <div className="chat-route">
         <DMSidebar/>
-          <form onSubmit={(e) => sendMessage(e)}>
-            <div className="recipient-name-container">
+        <div className="recipient-name-container">
           <div className="recipient-name">{match.params.recipient}</div>
           </div>
-        <div className="chat-container">
+          <form className="chat-container" onSubmit={(e) => sendMessage(e)}>
+        <div>
         <div className="chat-area">
         </div>
         <div className="input-container">
