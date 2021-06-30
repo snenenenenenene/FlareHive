@@ -104,4 +104,4 @@ dist
 .tern-port
 
 # Documentation
-./documentation/classdiagram.drawio
+*.drawio

@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
 
 urlpatterns = [
+    path('flarehive_api/', include('flarehive_api.urls')),
     path('admin/', admin.site.urls),
 ]
