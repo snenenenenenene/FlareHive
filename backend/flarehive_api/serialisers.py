@@ -1,23 +1,23 @@
 from django.db import models
 from django.db.models import fields
 from rest_framework import serializers
-from .models import Message, Profile
-from django.contrib.auth.models import User
+from .models import Message, Profile, User
 
 class MessageSerialiser(serializers.ModelSerializer):
     class Meta:
         fields = (
-            'message_id',
-            'message_content',
-            'message_author'
+            'id',
+            'content',
+            'author'
         )
         model = Message
 
 class MessageUpdateSerialiser(serializers.ModelSerializer):
     class Meta:
             fields = (
-                'message_id',
-                'message_content',
+                'id',
+                'content',
+                'author'
             )
             model = Message
 
@@ -35,8 +35,8 @@ class ProfileSerialiser(serializers.ModelSerializer):
     user = UserSerialiser()
     class Meta: 
         fields = (
-            'profile_id',
-            'profile_about',
+            'id',
+            'about',
             'user',
         )
         model = Profile
@@ -51,7 +51,7 @@ class ProfileSerialiser(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         validated_data.pop('user')
-        instance.profile_about = validated_data.get('profile_about', instance.profile_about)
+        instance.about = validated_data.get('about', instance.about)
         instance.save()
         return instance
 
@@ -59,7 +59,7 @@ class ProfileSerialiser(serializers.ModelSerializer):
 class ProfileUpdateSerialiser(serializers.ModelSerializer):
     class Meta:
         fields = (
-            'profile_id',
-            'profile_about'
+            'id',
+            'about'
         )
         model = Profile
