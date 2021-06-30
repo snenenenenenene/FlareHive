@@ -5,6 +5,7 @@ import DMSidebar from "../Chat/DMSidebar.Component";
         <DMSidebar/>
         <div className="dashboard-container">
         <h1 className="dashboard-title">Dashboard</h1>
+        <div>beans</div>
       </div>
       </div>
     );

@@ -41,6 +41,73 @@ body {
   background-color: var(--orange);
 }
 
+.green-button {
+  background-color: #56c295;
+  border: none;
+  padding: 5px;
+  color: black;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.green-button:hover {
+  opacity: 0.8;
+}
+.red-button {
+  background-color: var(--secondary);
+  border: none;
+  padding: 5px;
+  color: black;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.red-button:hover {
+  opacity: 0.8;
+}
+
+.disabled {
+  opacity: 0.8;
+}
+
+.spotify-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-2);
+  width: fit-content;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.spotify-artist {
+  color: #56c295;
+  font-weight: 1000;
+  margin: 0;
+}
+
+.spotify-song {
+  font-weight: 1000;
+  font-size: 20px;
+  margin: 0;
+}
+
+.spotify-album {
+  font-weight: 100;
+  margin: 0;
+}
+
+.spotify-container {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
 .sidebar {
   background-image: linear-gradient(#ff8b68, #1b1919);
   height: 100%;
@@ -76,8 +143,6 @@ body {
 }
 
 .close-icon {
-  position: relative;
-  left: 87%;
   cursor: pointer;
 }
 .close-icon:hover {
@@ -296,7 +361,7 @@ body {
   width: 95%;
   border-radius: 10px;
   margin: 1% auto;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .message-container {

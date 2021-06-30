@@ -11,6 +11,7 @@ import Register from "./Components/Authentication/Register.Component";
 import Chat from "./Components/Chat/Chat.Component";
 import Dashboard from "./Components/Dashboard/Dashboard.Component";
 import Account from "./Components/Settings/Account.Component";
+import Integrations from "./Components/Settings/Integrations.Component";
 import Settings from "./Components/Settings/Settings.Component";
 
 export default function App() {
@@ -22,7 +23,6 @@ export default function App() {
     // setUser(JSON.parse(localStorage.getItem('user') || '{}'));
     // console.log(user)
     // setAuthenticated(user.authenticated)
-    console.log(authenticated)
   }, []);
 
   
@@ -36,9 +36,16 @@ if(authenticated === true) {
           path="/chat/:recipient"
           component={Chat}
           />
+
+          {/* SETTINGS */}
+
           <Route 
           path="/settings/account"
           component={Account}
+          />
+          <Route 
+          path="/settings/integrations"
+          component={Integrations}
           />
           <Route 
           path="/settings"
