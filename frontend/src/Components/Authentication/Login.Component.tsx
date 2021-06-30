@@ -11,7 +11,6 @@ export default function Login() {
   const login = (e : any) => {
     e.preventDefault();
     if (email === "admin" && password === "admin") {
-      console.log("Logged in!")
       const user = {
         email: email,
         password: password,

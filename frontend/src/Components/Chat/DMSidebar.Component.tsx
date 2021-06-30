@@ -17,8 +17,10 @@ const DMSidebar =(props : any) => {
           pathname: `/chat/${e.target.id}`
        });
       }
-      const handleSettingsClick = (e : any, route : string) => {
-        history.push(`/${route}`);
+      const handleSettingsClick = (e : any) => {
+        history.push({pathname: `/settings/account`, 
+        state: {previousURL: window.location.pathname}
+      });
       } 
       
     return (
@@ -41,10 +43,10 @@ const DMSidebar =(props : any) => {
           </div>
           <div className="sidebar-dashboard">
             <div className="control-dock">
-            <SettingsRoundedIcon style={{fontSize: 40}} className="user-icon" onClick={(e) => {handleSettingsClick(e, "settings")}}/>
+            <SettingsRoundedIcon style={{fontSize: 40}} className="user-icon" onClick={(e) => {handleSettingsClick(e)}}/>
             </div>
             <div className="user-settings-dock">
-              <AccountCircleRoundedIcon style={{fontSize: 50}} className="user-icon" onClick={(e) => {handleSettingsClick(e, "user")}}/>
+              <AccountCircleRoundedIcon style={{fontSize: 50}} className="user-icon" onClick={(e) => {handleSettingsClick(e)}}/>
               <p style={{fontWeight: 1000, fontSize: 25}}>User1</p>
               </div>
               <button onClick={() => logout()}>LOGOUT</button>

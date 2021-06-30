@@ -3,12 +3,14 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from "react-router-dom";
 import './App.css';
 import Login from "./Components/Authentication/Login.Component";
 import Register from "./Components/Authentication/Register.Component";
 import Chat from "./Components/Chat/Chat.Component";
 import Dashboard from "./Components/Dashboard/Dashboard.Component";
+import Account from "./Components/Settings/Account.Component";
 import Settings from "./Components/Settings/Settings.Component";
 
 export default function App() {
@@ -35,9 +37,15 @@ if(authenticated === true) {
           component={Chat}
           />
           <Route 
-          path="/settings"
-          component={Settings}
+          path="/settings/account"
+          component={Account}
           />
+          <Route 
+          path="/settings"
+          >
+          <Redirect to="/settings/account"/>
+          </Route>
+          
           <Route
           path="/home"
           component={Dashboard}
