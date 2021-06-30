@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-app_name = 'flarehive_api'
+app_name = 'api'
 
 urlpatterns = [
     path('messages/', views.ListMessages.as_view(), name='index'),

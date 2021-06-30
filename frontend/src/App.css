@@ -2,6 +2,7 @@
   /* --primary: #24305e; */
   --primary: #181414;
   --selected: #443d3d;
+  --selected-chat: #110f0f;
   --secondary: #f76c6c;
   --tertiary: #f8e9a1;
   /* --primary-2: #374785; */
@@ -9,6 +10,7 @@
   /* --primary-3: #a8d0e6; */
   --primary-3: #eea981;
   --text-color: #fff;
+  --orange: #ff8b68;
 }
 html,
 body {
@@ -36,11 +38,11 @@ body {
 .orange-decoration {
   height: 50%;
   position: relative;
-  background-color: var(--tertiary);
+  background-color: var(--orange);
 }
 
 .sidebar {
-  background-image: linear-gradient(#f8eaa190, #f76c6c70);
+  background-image: linear-gradient(#ff8b68, #1b1919);
   height: 100%;
   max-width: 15%;
   min-width: 15%;
@@ -149,14 +151,14 @@ body {
   border-radius: 5px;
   margin: 10px -5px;
   display: flex;
+  font-size: 20px;
   align-items: center;
 }
 
 .chat:hover {
   background-color: var(--primary-3);
-  color: var(--primary);
   font-weight: bolder;
-  transition: all 0.3s;
+  transition: all 0.1s;
 }
 
 .direct-messages-text {
@@ -241,12 +243,41 @@ body {
 }
 
 .chat-title {
+  display: flex;
+  align-items: center;
   color: var(--text-color);
   font-weight: 1000;
   margin: 0;
-  padding: 20px;
+  padding: 10px 50px 0 55px;
   max-width: 100%;
   background-color: var(--primary-2);
+}
+
+.user-action-dock {
+  position: relative;
+  left: 85%;
+  background-color: var(--selected-chat);
+  padding: 5px;
+  margin: 0;
+  border-radius: 20px;
+}
+
+.user-action-icon {
+  border-radius: 100%;
+  background-color: var(--tertiary);
+  color: var(--primary);
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.user-action-icon:hover {
+  border-radius: 100%;
+  background-color: var(--secondary);
+  color: var(--tertiary);
+  padding: 5px;
+  margin: 5px;
+  transform: color 0.1s;
 }
 
 .chat-container {
@@ -265,6 +296,37 @@ body {
   width: 95%;
   border-radius: 10px;
   margin: 1% auto;
+  overflow: hidden;
+}
+
+.message-container {
+  display: flex;
+  padding: 10px;
+}
+
+.message-container:hover {
+  background-color: var(--selected-chat);
+  transition: color 0.1s;
+}
+.message-user-icon {
+  position: relative;
+  top: -15%;
+  background-color: pink;
+  border-radius: 100%;
+  min-width: 50px;
+  min-height: 50px;
+  margin: auto 10px;
+  cursor: pointer;
+}
+
+.message-user {
+  font-size: 24px;
+  font-weight: 1000;
+  cursor: pointer;
+}
+
+.message-text {
+  font-size: 18px;
 }
 
 .input-container {

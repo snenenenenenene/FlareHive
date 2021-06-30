@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function Register() {
   const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory();
 
@@ -13,6 +14,7 @@ export default function Register() {
     if (email === "admin" && password === "admin") {
       console.log("Logged in!")
       const user = {
+        username: username,
         email: email,
         password: password,
         authenticated: true,
@@ -21,11 +23,15 @@ export default function Register() {
       history.push(`/home`);
       return '';
     }
-    axios.post(`${process.env.REACT_APP_API_URL}/register`, 
+    axios.post(`${process.env.REACT_APP_API_URL}/profiles/`,
     {
-      email: email,
-      password: password
-    })
+      profile_about: "Bzzzzzzzzz",
+      user: {
+          username: username,
+          email: email,
+          password: password
+      }
+  })
     .then(response => {
       console.log(response)
     })
@@ -43,6 +49,9 @@ export default function Register() {
         <p>Meet people from hives all around the world.</p>
         <p>Share your interests &amp; find new like-minded bees.</p>
       </div>
+        <div>
+        <input className="login-input" onChange={e => setUsername(e.target.value)} placeholder="USERNAME" ></input>
+        </div>
         <div>
         <input className="login-input" onChange={e => setEmail(e.target.value)} placeholder="EMAIL" ></input>
         </div>

@@ -18,6 +18,7 @@ from django.urls import path
 from django.urls.conf import include
 
 urlpatterns = [
-    path('flarehive_api/', include('flarehive_api.urls')),
+    path('api/', include('flarehive_api.urls')),
+    path('auth/', include("django.contrib.auth.urls")),
     path('admin/', admin.site.urls),
 ]
