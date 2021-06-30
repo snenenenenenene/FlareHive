@@ -169,6 +169,10 @@ body {
   width: 100%;
 }
 
+.integration-container {
+  display: flex;
+}
+
 .sidebar-dashboard {
   border-radius: 15px;
   height: 15%;
