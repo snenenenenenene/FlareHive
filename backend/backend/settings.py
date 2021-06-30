@@ -42,16 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ]
-}
-
-CORS_ORIGIN_WHITELIST = (
-    'localhost:3000/'
-)
-
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware', 
     'django.middleware.common.CommonMiddleware', 
@@ -62,6 +52,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
+
+CORS_ORIGIN_WHITELIST = [
+    'https://localhost:3000'
 ]
 
 ROOT_URLCONF = 'backend.urls'
