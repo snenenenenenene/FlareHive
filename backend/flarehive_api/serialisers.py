@@ -56,7 +56,7 @@ class ProfileSerialiser(serializers.ModelSerializer):
         return instance
 
     
-class ProfileCreateUpdateSerialiser(serializers.ModelSerializer):
+class ProfileUpdateSerialiser(serializers.ModelSerializer):
     class Meta:
         fields = (
             'id',
