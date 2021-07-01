@@ -1,4 +1,4 @@
-from .serialisers import  MessageSerialiser, MessageUpdateSerialiser, ProfileSerialiser, UserSerialiser, ProfileCreateUpdateSerialiser
+from .serialisers import  MessageSerialiser, MessageUpdateSerialiser, ProfileSerialiser, UserSerialiser, ProfileUpdateSerialiser
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from rest_framework import generics
@@ -35,12 +35,12 @@ class ListProfiles(generics.ListAPIView):
 
 class AddProfile(generics.CreateAPIView):
     queryset = Profile.objects.all()
-    serializer_class = ProfileCreateUpdateSerialiser
+    serializer_class = ProfileSerialiser
 
 class UpdateProfile(generics.RetrieveUpdateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = Profile.objects.all()
-    serializer_class = ProfileCreateUpdateSerialiser
+    serializer_class = ProfileUpdateSerialiser
 
 
 
