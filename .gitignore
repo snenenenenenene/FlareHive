@@ -105,3 +105,4 @@ dist
 
 # Documentation
 ./documentation/classdiagram.drawio
+db.sqlite3
