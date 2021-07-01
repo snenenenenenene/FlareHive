@@ -18,6 +18,7 @@ class Channel(models.Model):
 
     def __str__(self) -> str:
         return self.channel_name
+        
 class Message(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     content = models.CharField(max_length=256)
