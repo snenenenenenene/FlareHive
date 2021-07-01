@@ -105,3 +105,4 @@ dist
 
 # Documentation
 *.drawio
+db.sqlite3
