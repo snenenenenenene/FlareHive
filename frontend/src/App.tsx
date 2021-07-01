@@ -1,26 +1,106 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useState, useEffect} from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import './App.css';
+import Login from "./Components/Authentication/Login.Component";
+import Register from "./Components/Authentication/Register.Component";
+import Chat from "./Components/Chat/Chat.Component";
+import Dashboard from "./Components/Dashboard/Dashboard.Component";
+import Account from "./Components/Settings/Account.Component";
+import Integrations from "./Components/Settings/Integrations.Component";
+import Settings from "./Components/Settings/Settings.Component";
 
-function App() {
+export default function App() {
+  const user = JSON.parse(localStorage.getItem('user') || '{}');
+  const [userData, setUserData] = useState(user);
+  const [authenticated, setAuthenticated] = useState(user.authenticated);  
+
+  useEffect(() => {
+    // setUser(JSON.parse(localStorage.getItem('user') || '{}'));
+    // console.log(user)
+    // setAuthenticated(user.authenticated)
+  }, []);
+
+  
+if(authenticated === true) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+      <Router>
+      <div className="App">
+      <Switch>
+          <Route 
+          path="/chat/:recipient"
+          component={Chat}
+          />
 
-export default App;
+          {/* SETTINGS */}
+
+          <Route 
+          path="/settings/account"
+          component={Account}
+          />
+          <Route 
+          path="/settings/integrations"
+          component={Integrations}
+          />
+          <Route 
+          path="/settings"
+          >
+          <Redirect to="/settings/account"/>
+          </Route>
+          
+          <Route
+          path="/home"
+          component={Dashboard}
+          />
+          <Route 
+          exact path="/" 
+          component={Dashboard}
+          />
+          <Route 
+          exact path="/login" 
+          component={Dashboard}
+          />
+        </Switch>
+        </div>
+      </Router>
+      <div className="top-decoration">
+        <div className="red-decoration"></div>
+        <div className="orange-decoration"></div>
+        <div className="yellow-decoration"></div>
+      </div>
+    </div>
+  )
+}
+  else {
+    return (
+      <div>
+      <Router>
+      <div className="App">
+      <Switch>
+      <Route 
+      path="/login" 
+      component={Login}/>
+      <Route 
+      path="/register"
+      component={Register}/>
+      <Route 
+      path="/*"
+      component={Login}/>
+    </Switch>
+    </div>
+    </Router>
+    <div className="top-decoration">
+        <div className="red-decoration"></div>
+        <div className="orange-decoration"></div>
+        <div className="yellow-decoration"></div>
+      </div>
+    </div>
+      
+    )
+  }
+}
